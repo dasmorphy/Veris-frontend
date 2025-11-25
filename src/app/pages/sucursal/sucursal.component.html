@@ -1,0 +1,38 @@
+
+<div class="d-flex flex-column justify-content-between" *ngIf="branch_selected" style="background-color: #f5f5f5;">
+    <button
+        class="btn btn-primary border rounded"
+        style="width: 80px;"
+        (click)="onBranch(null)"
+    >
+        <i class="bi bi-arrow-left me-2"></i>
+        Atrás
+    </button>
+    <div class="body-container d-flex justify-content-center align-items-center" >
+        <div class="sucursal-content text-center">
+            <div class="icon-container mx-auto">
+                <!-- <img src="/assets/img/notepad-icon.png" alt="icon" /> -->
+            </div>
+    
+            <h5 class="fw-semibold mt-2">{{branch_selected}}</h5>
+        </div>
+    
+    </div>
+</div>
+
+
+<div class="container mt-5 text-center" *ngIf="!branch_selected">
+    <h2 class="mb-5" style="font-weight: 500;">
+        Selecciona Sucursal
+    </h2>
+
+    <div class="d-flex justify-content-center gap-4 flex-wrap">
+        <button *ngFor="let i of arrayButton"
+            class="btn btn-light border rounded px-5 py-3"
+            (click)="onBranch(i.name)"
+        >
+            {{ i.name }}
+        </button>
+
+    </div>
+</div>
